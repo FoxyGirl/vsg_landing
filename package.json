@@ -1,0 +1,41 @@
+{
+  "name": "vsg_landing",
+  "version": "1.0.0",
+  "description": "Landing for Visageoutdoor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoxyGirl/vsg_landing.git"
+  },
+  "author": "Homebox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FoxyGirl/vsg_landing/issues"
+  },
+  "homepage": "https://github.com/FoxyGirl/vsg_landing#readme",
+  "devDependencies": {
+    "autoprefixer": "6.4.1",
+    "browser-sync": "2.15.0",
+    "css-mqpacker": "^5.0.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-less": "^3.3.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp style",
+    "start": "gulp serve"
+  }
+}
