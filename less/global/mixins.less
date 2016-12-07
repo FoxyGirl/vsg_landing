@@ -1,0 +1,40 @@
+.ul-clear() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zero-centered() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.clear-fix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.border-common(@size: @border-common-width; @color: @brand-color2) {
+  border-width: @size;
+  border-style: solid;
+  border-color: @color;
+}
+
+.border-common-top(@size: @border-common-width; @color: @brand-color2) {
+  border-top-width: @size;
+  border-top-style: solid;
+  border-top-color: @color;
+}
+
+.border-common-bottom(@size: @border-common-width; @color: @brand-color2) {
+  border-bottom-width: @size;
+  border-bottom-style: solid;
+  border-bottom-color: @color;
+}
