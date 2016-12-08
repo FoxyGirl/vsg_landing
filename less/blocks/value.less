@@ -1,0 +1,43 @@
+.value {
+  display: flex;
+  .border-common-top();
+
+  @media @tablet-big-width {
+    display: block;
+  }
+}
+
+.value__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  flex-shrink: 0;
+  margin-right: 5px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+
+  @media @tablet-big-width {
+    text-align: center;
+    width: 100%;
+
+    h2 {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .title-mark {
+    color: @brand-color2;
+  }
+}
+
+.value__image {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  img {
+    width: 100%;
+  }
+}
