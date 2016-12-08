@@ -1,0 +1,41 @@
+.information {
+  &__title {
+    padding-bottom: 5px;
+    .border-common-bottom();
+    text-align: center;
+    font-size: 1.65rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__text {
+    text-align: justify;
+    column-count: 2;
+    column-gap: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @media @mobile-middle-width {
+      column-count: 1;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.25;
+      font-size: 1rem;
+      text-indent: 30px;
+    }
+  }
+}
+
+.mark {
+  font-weight: 600;
+
+  &--yellow {
+    color: @brand-color2;
+  }
+
+  &--blue {
+    color: @brand-color;
+  }
+}

@@ -8,4 +8,20 @@
     padding-top: 25px;
     padding-bottom: 25px;
   }
+
+  &__top-title {
+    float: right;
+    margin-right: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &::first-letter {
+      font-size: 1.6rem;
+    }
+
+    @media only screen and (max-width: 730px) {
+      display: none;
+    }
+  }
 }
