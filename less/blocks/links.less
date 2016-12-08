@@ -1,15 +1,20 @@
 .link {
-  position: absolute;
+  /*position: absolute;
   right: 0;
-  top: 25px;
+  top: 25px;*/
+  float: right;
+  position: relative;
+  margin-right: -@indent-help;
   padding-left: 15px;
   padding-right: 15px;
+  min-width: 250px;
   height: @top-link-height - 2;
   line-height: @top-link-height;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
+  text-align: right;
   color: @light-color;
   background-color: rgba(20,50,70,0.5);
   background-color: @brand-color;
@@ -49,5 +54,6 @@
 
   &--header {
     top: 45px;
+    margin-right: 0;
   }
 }
