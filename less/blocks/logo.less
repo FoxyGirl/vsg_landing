@@ -8,6 +8,10 @@
   height: auto;
   font-size: 0;
 
+  @media @mobile-middle-width {
+    display: none;
+  }
+
   &.logo--main {
     position: absolute;
     top: 155px;
@@ -23,6 +27,7 @@
     }
 
     @media @mobile-middle-width {
+      display: block;
       padding: 15px 20px;
     }
   }
