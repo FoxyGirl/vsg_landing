@@ -21,6 +21,14 @@
   }
 }
 
+.container() {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  .clear-fix();
+  background-color: @light-color;
+}
+
 .border-common(@size: @border-common-width; @color: @brand-color2) {
   border-width: @size;
   border-style: solid;

@@ -1,0 +1,31 @@
+.page-header {
+  .container();
+  position: relative;
+  min-height: 540px;
+  background-image: url(../img/metro_116.png);
+  background-position: -120px 0;
+  background-repeat: no-repeat;
+
+  &__content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 60.625%; /* 582 / 960 */
+    padding: 385px 25px 25px;
+    background-color: @light-color;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 38px;
+    text-transform: uppercase;
+    font-size: 2rem;
+
+    span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: normal;
+    }
+  }
+}

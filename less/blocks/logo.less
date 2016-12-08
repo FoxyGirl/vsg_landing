@@ -1,0 +1,31 @@
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 185px;
+  height: auto;
+  font-size: 0;
+
+  &.logo--main {
+    top: 155px;
+    left: 50%;
+    width: 67.5%; /* 648 / 960 */
+    //margin-left: -315px;
+    transform: translateX(-48%);
+    padding: 20px 25px;
+    background-color: fade(@light-color, 50%);
+
+    @media @mobile-width {
+      width: 85%;
+    }
+
+    @media @mobile-middle-width {
+      padding: 15px 20px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
