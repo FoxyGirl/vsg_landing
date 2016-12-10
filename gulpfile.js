@@ -101,6 +101,11 @@ gulp.task("watch:html", ["copy:html"], function(done) {
         done();
 });
 
+gulp.task("watch:js", ["scripts"], function(done) {
+    server.reload(),
+        done();
+});
+
 
 gulp.task("serve", function() {
     server.init({
@@ -113,5 +118,7 @@ gulp.task("serve", function() {
     gulp.watch("less/**/*.less", ["style"]);
     gulp.watch("*.html", ["watch:html"]);
     //gulp.watch("*.html").on("change", server.reload);
-    gulp.watch("js/*.js").on("change", server.reload);
+    //gulp.watch("js/*.js").on("change", server.reload);
+    gulp.watch("js/*.js", ["watch:js"]);
+
 });
