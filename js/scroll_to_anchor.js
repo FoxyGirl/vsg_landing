@@ -8,26 +8,19 @@ console.log('test');
         /** trigger for using function toUp in callback
          *  @type {boolean}
          */
-        upTrigger,
-        comeBack = document.getElementById('comeback');
+        comeBack = document.getElementById('comeback'),
+        link_2 = document.getElementById('link_2'),
+        link_3 = document.getElementById('link_3'),
+        link_4 = document.getElementById('link_4');
 
     //if window scrolling more than HEIGHT_SHOW to show toUp anchor
     comeBack.style.display = (window.pageYOffset > HEIGHT_SHOW ? 'block' : 'none');
-    upTrigger = (window.pageYOffset > HEIGHT_SHOW ? 'true' : 'false');
 
     window.onscroll = function () {
         comeBack.style.display = (window.pageYOffset > HEIGHT_SHOW ? 'block' : 'none');
     };
 
-    //set handler for click on scrolling anchor
-    comeBack.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (!upTrigger) { return; }
-        toUp();
-    }, false);
-
-    /*
-    var V = 2; // скорость, может иметь дробное значение через точку
+    var V = 0.2; // скорость, может иметь дробное значение через точку
 
     comeBack.addEventListener('click', function(e) {
         e.preventDefault();
@@ -50,24 +43,71 @@ console.log('test');
             }
         }
     }, false);
-*/
-    //function window scrolling
-    /** @function toUp
-     *  To scroll window to up using requestAnimationFrame
-     *  Change upTrigger according condition (window.pageYOffset > 0) ? false : true
-     */
-    function toUp(stopYOffset) {
-        var stopYOffset = stopYOffset || 0;
-        upTrigger = false;
-        console.log('stopYOffset= ' + stopYOffset);
-        //speed depends from distance to top
-        var speed = window.pageYOffset/10;
-        window.scrollBy(0,-speed);
-        if (window.pageYOffset > 0) {
-            requestAnimationFrame(toUp);
-        } else {
-            upTrigger = true;
+
+    link_2.addEventListener('click', function(e) {
+        e.preventDefault();
+        var w = window.pageYOffset,  // прокрутка
+            hash = '#description',
+            // hash = this.href.replace(/[^#]*(.*)/, '#advertising'),  // id элемента, к которому нужно перейти
+            t = document.querySelector(hash).getBoundingClientRect().top - 10,  // отступ от окна браузера до id
+            start = null;
+        console.log('t= ' + t);
+        requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+        function step(time) {
+            if (start === null) start = time;
+            var progress = time - start,
+                r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+            window.scrollTo(0,r);
+            if (r != w + t) {
+                requestAnimationFrame(step)
+            } else {
+                location.hash = hash  // URL с хэшем
+            }
         }
-    }
+    }, false);
+
+    link_3.addEventListener('click', function(e) {
+        e.preventDefault();
+        var w = window.pageYOffset,  // прокрутка
+            hash = '#capabilities',
+            // hash = this.href.replace(/[^#]*(.*)/, '#advertising'),  // id элемента, к которому нужно перейти
+            t = document.querySelector(hash).getBoundingClientRect().top - 10,  // отступ от окна браузера до id
+            start = null;
+        console.log('t= ' + t);
+        requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+        function step(time) {
+            if (start === null) start = time;
+            var progress = time - start,
+                r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+            window.scrollTo(0,r);
+            if (r != w + t) {
+                requestAnimationFrame(step)
+            } else {
+                location.hash = hash  // URL с хэшем
+            }
+        }
+    }, false);
+
+    link_4.addEventListener('click', function(e) {
+        e.preventDefault();
+        var w = window.pageYOffset,  // прокрутка
+            hash = '#benefits',
+            // hash = this.href.replace(/[^#]*(.*)/, '#advertising'),  // id элемента, к которому нужно перейти
+            t = document.querySelector(hash).getBoundingClientRect().top - 10,  // отступ от окна браузера до id
+            start = null;
+        console.log('t= ' + t);
+        requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+        function step(time) {
+            if (start === null) start = time;
+            var progress = time - start,
+                r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+            window.scrollTo(0,r);
+            if (r != w + t) {
+                requestAnimationFrame(step)
+            } else {
+                location.hash = hash  // URL с хэшем
+            }
+        }
+    }, false);
 
 })();
